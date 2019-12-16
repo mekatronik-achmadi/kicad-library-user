@@ -6,16 +6,19 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/kicad-library-user"
 license=('Custom')
 depends=('kicad')
-source( 'git+https://github.com/mekatronik-achmadi/kicad-library-user.git'
+source=('git+https://github.com/mekatronik-achmadi/kicad-library-user.git'
 	'git+https://github.com/apeng2012/apeng-kicad.git')
 md5sums=('SKIP' 'SKIP')
 
-pkgver() {
-	cd "${srcdir}/toastpp"
-	printf "%s" "$(git describe --tags | sed 's/\([^-]*-\)g/r\1/;s/-/./g;s/^rel\.//')"
-}
-
 package(){
-	cd $srcdir/$pkgname
+	mkdir -p $pkgdir/usr/share/kicad/userlib/{footprints,packages3d,symbols}
 
+	cd $srcdir/$pkgname/
+	cp symbols/* $pkgdir/usr/share/kicad/userlib/symbols/
+	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/
+
+	cd $srcdir/apeng-kicad/
+	cp library/* $pkgdir/usr/share/kicad/userlib/symbols/
+	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/
+	cp -r packages3d/* $pkgdir/usr/share/kicad/userlib/packages3d/
 }
