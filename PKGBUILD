@@ -6,8 +6,9 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/kicad-library-user"
 license=('Custom')
 depends=('kicad')
-source('git+https://github.com/mekatronik-achmadi/kicad-library-user.git')
-md5sums=('SKIP')
+source( 'git+https://github.com/mekatronik-achmadi/kicad-library-user.git'
+	'git+https://github.com/apeng2012/apeng-kicad.git')
+md5sums=('SKIP' 'SKIP')
 
 pkgver() {
 	cd "${srcdir}/toastpp"
