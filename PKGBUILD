@@ -19,6 +19,6 @@ package(){
 
 	cd $srcdir/apeng-kicad/
 	cp library/* $pkgdir/usr/share/kicad/userlib/symbols/
-	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/
+	cp -r footprints/* $pkgdir/usr/share/kicad/userlib/footprints/
 	cp -r packages3d/* $pkgdir/usr/share/kicad/userlib/packages3d/
 }
