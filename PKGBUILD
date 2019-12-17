@@ -6,20 +6,17 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/kicad-library-user"
 license=('Custom')
 depends=('kicad')
-source=('git+https://github.com/mekatronik-achmadi/kicad-library-user.git'
-	'git+https://github.com/apeng2012/apeng-kicad.git')
+source=('git+https://github.com/mekatronik-achmadi/kicad-library-user.git')
 md5sums=('SKIP' 'SKIP')
 
 package(){
-	mkdir -p $pkgdir/usr/share/kicad/userlib/{footprints,packages3d,symbols}
-
 	cd $srcdir/$pkgname/
-	cp symbols/* $pkgdir/usr/share/kicad/userlib/symbols/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/symbols/user
+	cp symbols/* $pkgdir/usr/share/kicad/userlib/symbols/user/
+
 	mkdir -p $pkgdir/usr/share/kicad/userlib/footprints/user
 	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/user/
 
-	cd $srcdir/apeng-kicad/
-	cp library/* $pkgdir/usr/share/kicad/userlib/symbols/
-	cp -r footprints/* $pkgdir/usr/share/kicad/userlib/footprints/
-	cp -r packages3d/* $pkgdir/usr/share/kicad/userlib/packages3d/
+	mkdir -p $pkgdir/usr/share/kicad/userlib/packages3d/user
 }
