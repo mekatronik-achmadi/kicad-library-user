@@ -7,7 +7,7 @@ url="https://github.com/mekatronik-achmadi/kicad-library-user"
 license=('Custom')
 depends=('kicad')
 source=('git+https://github.com/mekatronik-achmadi/kicad-library-user.git')
-md5sums=('SKIP' 'SKIP')
+md5sums=('SKIP')
 
 package(){
 	cd $srcdir/$pkgname/
