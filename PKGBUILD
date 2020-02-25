@@ -16,7 +16,9 @@ package(){
 	cp symbols/* $pkgdir/usr/share/kicad/userlib/symbols/user/
 
 	mkdir -p $pkgdir/usr/share/kicad/userlib/footprints/user
+	mv footprints/ESP8266.pretty $pkgdir/usr/share/kicad/userlib/footprints/
 	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/user/
 
 	mkdir -p $pkgdir/usr/share/kicad/userlib/packages3d/user
+	mv packages3d/ESP8266.3dshapes $pkgdir/usr/share/kicad/userlib/packages3d/
 }
