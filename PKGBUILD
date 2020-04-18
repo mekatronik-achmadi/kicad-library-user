@@ -21,4 +21,5 @@ package(){
 
 	mkdir -p $pkgdir/usr/share/kicad/userlib/packages3d/user
 	mv packages3d/ESP8266.3dshapes $pkgdir/usr/share/kicad/userlib/packages3d/
+	cp packages3d/* $pkgdir/usr/share/kicad/userlib/packages3d/user
 }
